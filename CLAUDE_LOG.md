@@ -14,4 +14,6 @@
 - Añadido como submódulo en `rpbase-enhanced` (`resources/mhacking`, rama `cachoporp`).
 - Recurso simple: solo `client_scripts` + `ui_page` (NUI), sin `server_scripts`, sin natives fuera de lo estándar — no se esperan problemas de compatibilidad Enhanced específicos, pero no se ha probado en vivo el minijuego todavía.
 
-**Pendiente:** registrar en `FiveM-Enhanced/config/resources.json` y añadir `ensure mhacking` a `server.cfg` (antes de `ensure qbx_crypto`, ya que es su dependencia), desplegar, y confirmar en vivo que el minijuego de hackeo abre correctamente al minar cripto.
+**Hecho también:** registrado en `FiveM-Enhanced/config/resources.json`, `ensure mhacking` añadido a `server.cfg` justo antes de `ensure qbx_crypto`, recurso sincronizado al volumen vía `deploy-changed.yml` (detectado automáticamente al añadir el submódulo) y `server.cfg` actualizado vía `sync-server-cfg.yml`.
+
+**Pendiente:** el `ensure` nuevo solo se lee al arrancar el server (no con un restart de recurso suelto) — falta un reinicio completo (`restart.yml`) para que `mhacking` empiece a cargar de verdad, y confirmar en vivo que el minijuego de hackeo abre correctamente al minar cripto.
